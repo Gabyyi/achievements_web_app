@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<form action="website_script_edit.php" method="post">
+			<label for="achievement">Achievement:</label>
+			<input type="text" name="achievement" required>
+			<br>
+			<label for="date">Completion Date:</label>
+			<input type="date" name="date" required>
+			<br>
+			<label for="status">Status:</label>
+			<select name="status" required>
+				<option value="not_completed">Not Completed</option>
+				<option value="completed">Completed</option>
+			</select>
+			<br>
+			<input type="submit" name="action" value="Edit">
+		</form>	
+	</body>
+</html>
