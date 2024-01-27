@@ -1,8 +1,8 @@
 <?php
 $servername="localhost";
-$username="gabi";
-$password="12345";
-$databasename="website_database";
+$username="user";
+$password="password";
+$databasename="database";
 $database_connection=mysqli_connect($servername , $username , $password , $databasename);
 
 if (!$database_connection) {
@@ -18,7 +18,7 @@ echo "Successfully connected to database: $databasename";
 	<br><br>This is the PHP script that display the database<br><br>
 <?php
 	$current_date=date('Y-m-d');
-	$database_query="SELECT * FROM website_database.achievementsid WHERE completion_date < '$current_date' AND status LIKE 'not_completed' ORDER BY completion_date ASC";
+	$database_query="SELECT * FROM database.achievements WHERE completion_date < '$current_date' AND status LIKE 'not_completed' ORDER BY completion_date ASC";
 	mysqli_query($database_connection, $database_query) or die("Query error to database: $databasename");
 
 	$query_result=mysqli_query($database_connection, $database_query);
