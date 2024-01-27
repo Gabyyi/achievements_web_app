@@ -1,8 +1,8 @@
 <?php
 $servername="localhost";
-$username="gabi";
-$password="12345";
-$databasename="website_database";
+$username="user";
+$password="password";
+$databasename="database";
 $database_connection=mysqli_connect($servername , $username , $password , $databasename);
 
 if (!$database_connection) {
@@ -17,7 +17,7 @@ echo "Successfully connected to database: $databasename";
 	<body>
 	<br><br>This is the PHP script that delete data and then reads the database<br><br>
 <?php
-	$database_query="DELETE FROM website_database.achievementsid WHERE achievements='$_POST[achievement]'";
+	$database_query="DELETE FROM database.achievements WHERE achievements='$_POST[achievement]'";
 	mysqli_query($database_connection, $database_query) or die("Query error to database: $databasename");
 	#shell_exec('/var/www/html/1.sh');
     
@@ -27,7 +27,7 @@ echo "Successfully connected to database: $databasename";
     	chdir($old_path);
     	echo $output;
 
-	$database_query="SELECT * FROM website_database.achievementsid";
+	$database_query="SELECT * FROM database.achievements";
 	mysqli_query($database_connection, $database_query) or die("Query error to database: $databasename");
 
 	$query_result=mysqli_query($database_connection, $database_query);
