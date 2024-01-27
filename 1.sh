@@ -1,2 +1,2 @@
 #!/bin/bash
-mysql website_database < autoupdateid.sql
+mysql database < autoupdateid.sql
